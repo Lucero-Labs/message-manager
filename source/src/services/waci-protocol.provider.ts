@@ -40,7 +40,6 @@ export const WACIProtocolProvider: Provider = {
               invitationId: waciInvitationId,
               holderId,
             });
-            throw new Error(errorMessage); // TODO: Manage Gracefully
           }
 
           const {
