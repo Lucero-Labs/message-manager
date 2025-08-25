@@ -51,8 +51,8 @@ export const WACIProtocolProvider: Provider = {
           } = storedData;
 
           const issuerInfo = {
-            id: issuerDid,
-            name: nameDid ?? 'Credential Issuer',
+            id: issuer?.id || issuerDid,
+            name: issuer?.name || nameDid || 'Credential Issuer',
             styles: issuer?.styles,
           };
 

@@ -3,10 +3,11 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { Logger } from '../utils/logger';
 import { WaciIssueCredentialData } from '../schemas/waci-issue-credential-data.schema';
+import { IssuerInfo } from '../services/credential-builder.service';
 
 interface StoredCredentialData {
-  issuerDid: string;
-  nameDid: string;
+  issuerDid?: string;
+  nameDid?: string;
   credentialSubject: any;
   options: {
     expirationDays?: number;
@@ -18,7 +19,7 @@ interface StoredCredentialData {
     heroImage?: string;
   };
   styles?: any;
-  issuer?: any;
+  issuer?: IssuerInfo;
 }
 
 @Injectable()
